@@ -1,0 +1,58 @@
+.login_screen{
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  "ilustration wallet"
+  "ilustration wallet";
+  
+}
+
+.cover_image{
+  height: 100vh;
+  width: auto;
+  object-fit: cover; /* Menyesuaikan gambar tanpa distorsi */
+  
+}
+
+.title{
+  font-size: 50;
+}
+
+.ilustration_box{
+grid-area: ilustration;
+}
+
+.connect_wallet_box {
+grid-area: wallet;
+background-color: white;
+padding: 5rem;
+/* height: 100vh; */
+
+}
+
+.btn_connect{
+  font-size: 20;
+  background-color: rgb(3, 13, 9);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn_connect:hover{
+  background-color: white;
+  color: black;
+}
+
+@media only screen and (max-width:550px) {
+  .login_screen{
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+      "ilustration"
+      "wallet";
+      
+  }
+  
+}
