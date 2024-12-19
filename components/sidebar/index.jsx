@@ -22,7 +22,7 @@ const Index = () => {
           {sidebar.map((el, i) => (
             <div key={i} className={Style.sidebar}>
               <Link href={{ pathname: `${el.link}` }} className={Style.link}>
-                {el.icon} {/* Menampilkan ikon */}
+                {el.icon}
                 {el.name}
               </Link>
             </div>
