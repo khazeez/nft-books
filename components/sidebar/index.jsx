@@ -7,8 +7,6 @@ const Index = () => {
   const sidebar = [
     { name: 'Home', link: '/', icon: <FaHome /> },
     { name: 'Add book', link: 'add-book', icon: <FaPlus /> },
-    { name: 'Buy book', link: 'buy-book', icon: <FaShoppingCart /> },
-    { name: 'NFT Details', link: 'NFT-details', icon: <FaInfoCircle /> },
     { name: 'Set Resale Price', link: 'set-resale-price', icon: <FaDollarSign /> },
     { name: 'Cancel resale price', link: 'cancel-resale-price', icon: <FaTimes /> },
     { name: 'Get resale price', link: 'get-resale-price', icon: <FaExchangeAlt /> },

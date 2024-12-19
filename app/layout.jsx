@@ -2,11 +2,11 @@
 import style from "./globals.module.css";
 import styles from './page.module.css'
 import Sidebar from "@/components/sidebar";
-import Footer from "@/components/footer";
 import image from "./image/image";
 import {contract, web3} from '../contract/contract'
 import Alert from '../public/alert'
 import { FaBook } from 'react-icons/fa'
+import api from '../pages/API/pinata'
 
 
 import {useState, useEffect} from 'react'
@@ -19,15 +19,14 @@ export default function RootLayout({ children }) {
   const [owner, setOwner] = useState("");
 
 
-
   useEffect(() => {
     const { ethereum } = window;
 
     if (ethereum) {
       ethereum.on('accountsChanged', (accounts) => {
-        
         setAccount(accounts[0]);
         Alert.showSwal()
+        
         
       });
     } else {
@@ -54,8 +53,8 @@ export default function RootLayout({ children }) {
 
         const ownerhere = await contract.methods.owner().call();
         setOwner(ownerhere.toLowerCase());
-
       } catch (error) {
+        Alert.walletNotInstalled()
         console.error("Error accessing accounts:", error);
       }
     } else {
@@ -91,7 +90,6 @@ export default function RootLayout({ children }) {
         <div className={style.navbar}>
             <div className={style.header}>Dashboard Owner</div>
               <div className={style.account}>
-                
                 <div className={style.account_child}>
                   {formatAddress(account)}
                 </div>

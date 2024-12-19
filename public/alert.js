@@ -22,6 +22,14 @@ class Alert {
       }
     });
   }
+
+  async walletNotInstalled() {
+    const walletNotInstalled = withReactContent(Swal);
+    await walletNotInstalled.fire({
+      title:'Wallet not installed',
+      icon:'error'
+    })
+  }
 }
 
 export default new Alert();
